@@ -11,6 +11,8 @@ var upperTab = $('.upper-tab');
 var bottomTab = $('.bottom-tab');
 var brandBox = $('.brand-box');
 
+var produktiInsertContent = $('.produkti-insert-content');
+
 var activeBrownColor = "rgb(95,67,57)";
 var activeTextColor = "rgb(245, 135, 31)";
 var tabColor = "rgba(113,82,72, 0.8)";
@@ -65,7 +67,7 @@ function setSubOptionListener(){
 
     $('.clickable-option').click(function(){
 
-        log('sub-option clicked');
+        console.log('sub-option clicked');
 
         contentContainer.hide();
 
@@ -97,13 +99,15 @@ function setSubOptionListener(){
             })
             .done(function(data){
 
-                contentContainer.html(data);
+                $('.produkt-content-container').show();
 
-                contentContainer.fadeIn();
+                produktiInsertContent.html(data);
+
+                produktiInsertContent.fadeIn();
                 showArrows(true);
                 currentNum = requiredDataNumber;
                 currentIndex = 0;
-                setArrowListener();
+                //setArrowListener();
             });
         // contentContainer.html(ajaxGet(requiredData));
     });
@@ -123,9 +127,11 @@ function setBottomTabListener(){
 
         contentContainer.hide();
 
+        produktiInsertContent.fadeOut();
+
         var dataRequiredNumber = parseInt($(this).attr('data-pannel'));
 
-        log(dataRequiredNumber);
+        console.log(dataRequiredNumber);
 
         var dataRequired = holder[dataRequiredNumber][0];
 
@@ -134,16 +140,18 @@ function setBottomTabListener(){
             })
             .done(function(data){
 
-                contentContainer.html(data);
+                produktiInsertContent.html(data);
+
+                produktiInsertContent.fadeIn();
 
                 showArrows(true);
 
-                contentContainer.fadeIn();
+               // contentContainer.fadeIn();
 
                 currentNum = dataRequiredNumber;
                 currentIndex = 0;
 
-                setArrowListener();
+                //setArrowListener();
             });
 
     });
@@ -153,21 +161,29 @@ function setBottomTabListener(){
 
 function setArrowListener(){
 
+
     rightArrow.click(function(){
+
+        console.log('Current index: ' + currentIndex);
 
         if((currentIndex + 1 < holder[currentNum].length)){
             currentIndex++;
 
-            contentContainer.hide();
+            produktiInsertContent.hide();
+
+            console.log(holder[currentNum][currentIndex]);
 
             $.ajax({
                     url : holder[currentNum][currentIndex]
                 })
                 .done(function(data){
                     console.log("rightArrowAjax");
-                    contentContainer.html(data)
-                    contentContainer.fadeIn();
+                    produktiInsertContent.html(data);
+                    produktiInsertContent.fadeIn();
                 })
+        }
+        else{
+            console.log('something wrong with the conditional');
         }
 
     });
@@ -175,18 +191,25 @@ function setArrowListener(){
 
     leftArrow.click(function(){
 
+        console.log('Current index: ' + currentIndex);
+
         if (!(currentIndex - 1 < 0)){
             currentIndex--;
 
-            contentContainer.hide();
+            produktiInsertContent.hide();
+
+            console.log(holder[currentNum][currentIndex]);
 
             $.ajax({
                     url : holder[currentNum][currentIndex]
                 })
                 .done(function(data){
-                    contentContainer.html(data);
-                    contentContainer.fadeIn();
+                    produktiInsertContent.html(data);
+                    produktiInsertContent.fadeIn();
                 })
+        }
+        else {
+            console.log('something wrong with the conditional');
         }
 
     });
@@ -208,53 +231,73 @@ function showArrows(bool){
 
 }
 
+function setUpperTabListener() {
 
-upperTab.click(function () {
+    upperTab.click(function () {
 
-    activateTab(false, currentActiveUpperTab);
+        activateTab(false, currentActiveUpperTab);
 
-    activateTab(true, $(this));
+        activateTab(true, $(this));
 
-    currentActiveUpperTab = $(this);
+        produktiInsertContent.fadeOut();
 
-    var requiredData = $(this).attr('data-pannel');//Repeat the same process as the prevous 2 functions
-    bottomTabs.hide();
+        currentActiveUpperTab = $(this);
 
-    contentContainer.hide();
+        var requiredData = $(this).attr('data-pannel');//Repeat the same process as the prevous 2 functions
+        bottomTabs.hide();
 
-    showArrows(false);
+        $('.produkt-content-container').hide();
+        contentContainer.hide();
 
-    $.ajax({
-            url: requiredData
-        })
-        .done(function(data){
+        showArrows(false);
 
-            contentContainer.html(data);
+        $.ajax({
+                url: requiredData
+            })
+            .done(function (data) {
 
-            contentContainer.fadeIn();
+                contentContainer.html(data);
 
-            setSubOptionListener();
+                contentContainer.fadeIn();
 
-        });
+                setSubOptionListener();
 
-});
+            });
+
+    });
+}
 
 
 $(function(){
+
+    $('.produkti-box-bottom-tabs').hide();
+    showArrows(false);
+    $('.produkt-content-container').hide();
 
     $('.brand-box').click(function(){
 
         console.log('brandBox clicked');
 
         var dataRequired = $(this).attr('data-pannel');
-        var tabToActivate = parseInt($(this).attr('data-tab'));
+        var tabToActivateNumber = parseInt($(this).attr('data-tab'));
+
+
+        console.log(dataRequired);
 
         $.ajax(dataRequired).done(function (data) {
+
+            var tabToActivate = $('.produkti-box-upper-tabs .upper-tab:nth-child(' + tabToActivateNumber +')');
+
             contentContainer.html(data);
             produktiBoxContainer.fadeIn();
-            activateTab(true, $('.produkti-box-upper-tabs .upper-tab:nth-child(' + tabToActivate +')'));
+            activateTab(true, tabToActivate);
+            currentActiveUpperTab = tabToActivate;
+
+            setUpperTabListener();
+            setSubOptionListener();
         });
 
     });
 
+    setArrowListener();
 });

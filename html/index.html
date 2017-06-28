@@ -59,7 +59,7 @@
         <div class="collapse navbar-collapse navbar-exl-collapse">
             <ul class="nav navbar-nav">
                 <li class="hidden">
-                    <a class="page-scroll" href="#page-top"></a>
+                    <a class="page-scroll" id="page-top"></a>
                 </li>
 
                 <li>
@@ -174,10 +174,10 @@
             <div class="produkti-box">
 
                 <div class="produkti-box-upper-tabs">
-                    <div class="upper-tab" data-pannel="JohnMastersMain.html">
+                    <div class="upper-tab color-changable" data-pannel="JohnMastersMain.html" data-number="1">
                         <div class="upper-tab-text">John Masters</div>
                     </div>
-                    <div class="upper-tab" data-pannel="RedkenMain.html">
+                    <div class="upper-tab color-changable" data-pannel="RedkenMain.html" data-number="2">
                         <div class="upper-tab-text">Redken</div>
                     </div>
                 </div>
@@ -190,14 +190,19 @@
                 </div>
 
                 <div class="produkt-content-container">
-                    <img src="../images/arrow_left.png" class="arrow" id="arrow-left">
+
+                    <div class="arr">
+                        <img src="../images/arrow_left.png" class="arrow" id="arrow-left">
+                    </div>
                     <div class="arrow-holder">
                         <div class="produkti-insert-content"></div>
                     </div>
-                    <img src="../images/arrow_right.png" class="arrow" id="arrow-right">
+                    <div class="arr">
+                        <img src="../images/arrow_right.png" class="arrow" id="arrow-right">
+                    </div>
                 </div>
 
-                <div class="produkti-box-bottom-brown-bar"></div>
+                <div class="produkti-box-bottom-brown-bar color-changable"></div>
 
             </div>
         </div>
@@ -231,10 +236,49 @@
         <span class="page-header-text">Lokacija</span>
     </div>
 
+    <div class="row location-holder">
+        <div class="col-md-6 col-md-offset-1">
+            <div id="map"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="location-right-text">
+
+                <div class="location-right-upper-text location-text-box">
+                    <span class="location-bold-text">Prostor smo opremili z mislijo o gostoljubnosti, z zeljo po ugodju ter obcutkom za sproscenost</span><br>
+                    Vas obisk pricakujemo v pravi mescanski vili na Emonski cesti 8
+                    <br>
+                    Najblizje parkirisce je na voljo nasproti ljubljanskih Krizank
+                </div>
+                <div class="location-right-bottom-text location-text-box">
+                    <span class="location-bold-text"> Emonska Cesta 8, 1000 Ljubjana </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
 
 <script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/produkti.js"></script>
+<script>
+    function initMap() {
+
+        var coordinates = {lat: 46.045944, lng: 14.502245};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: coordinates
+        });
+
+        var marker = new google.maps.Marker({
+            position: coordinates,
+            map: map
+        })
+
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9QG5-5uQZRk22edfFAUk0_bLn6lQy9qU&callback=initMap"></script>
 </body>
 
 </html>

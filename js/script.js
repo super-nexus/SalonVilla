@@ -2,6 +2,25 @@
 var storitveCardContent = null;
 var activeStoritveNav = null;
 var brandBoxHolder = null;
+var colorChangables = null;
+var storitvePannel = null;
+
+
+function initMap(){
+
+  var coordinates = {lat: 46.045878, lng: 14.5000449};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: coordinates
+  });
+
+  var marker = new google.maps.Marker({
+    position: coordinates,
+    map: map
+  })
+
+}
 
 
 $(function() {
@@ -9,7 +28,8 @@ $(function() {
   storitveCardContent = $('.storitve-card-content');
   activeStoritveNav = $('.storitve-nav-activ');
   brandBoxHolder = $('.brand-box-holder');
-
+  colorChangables = $('.color-changable');
+  storitvePannel = $('#storitve-pannel');
 
   //Changes content of storitve-card and makes tab activ or in-active
 
@@ -26,10 +46,15 @@ $(function() {
 
     var wantedCard = $(this).attr('data-pannel');
 
+    var wantedPicture = $(this).attr('data-picture');
+
     $.ajax(wantedCard).done(function(data){
       storitveCardContent.html(data);
       storitveCardContent.fadeIn();
     });
+
+    //UNCOMMENT FOR PICTURE CHANGE
+   // storitvePannel.css('background-image',"url('" + wantedPicture + "')" );
 
   });
 
@@ -73,7 +98,7 @@ $(function() {
 
     $('.brand-box-row').fadeOut();
 
-    if($(this).attr('id') == 'first-box'){
+    if($(this).attr('id') === 'first-box'){
       imgUrl = '../images/johnMasters.jpg';
     }
     else{
@@ -81,7 +106,7 @@ $(function() {
     }
 
     $('.produkti-container-img').html(
-        "<img class='img-responsive' src='" + imgUrl + "' >"
+        "<img id='back-img' class='img-responsive' src='" + imgUrl + "' >"
     );
 
 
@@ -91,5 +116,10 @@ $(function() {
 
 
   });
+
+
+  //Lokacija
+
+
 
 });

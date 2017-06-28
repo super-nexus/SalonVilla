@@ -22,6 +22,45 @@
   }
 }
 
+
+@keyframes brown-yellow {
+
+  from{
+    background-color: rgb(113, 82, 72);
+  }
+  to{
+    background-color: rgb(152, 138, 117);
+  }
+
+}
+
+@keyframes brown-yellow-active {
+  from{
+    background-color: rgba(113,82,72,0.8);
+  }
+  to{
+    background-color: rgb(141,117,82);
+  }
+}
+
+@keyframes yellow-brown {
+  from{
+    background-color: rgba(141,117,82, 0.8);
+  }
+  to{
+    background-color: rgba(113,82, 72,0.8);
+  }
+}
+
+@keyframes yellow-brown-active {
+  from{
+    background-color: rgba(141,117,82, 0.8);
+  }
+  to{
+    background-color: rgb(95, 67,57);
+  }
+}
+
 @keyframes brand-box{
   from{
     -webkit-box-shadow: 0 0 10px 8px #ccc;
@@ -62,6 +101,22 @@ nav{
   justify-content: center;
   align-items: center;
 
+}
+
+.color-brown{
+  background-color: rgba(113, 82, 72, 0.8);
+}
+
+.color-yellow{
+  background-color: rgba(141,117,82, 0.8);
+}
+
+.color-brown-active{
+  background-color: rgb(95,67,57);
+}
+
+.color-yellow-active{
+  background-color: rgb(141,117,82);
 }
 
 #mainLogo{
@@ -523,14 +578,24 @@ nav{
 
 }
 
+.arr{
+  display: flex;
+  display: -webkit-flex;
+
+  height: 10%;
+  width: 2%;
+  flex: 1;
+}
+
 .arrow{
   display: flex;
   display: -webkit-flex;
 
+  /*
   flex: 1;
   height: 10%;
   width: 2%;
-
+  */
 }
 
 .arrow-holder{
@@ -564,4 +629,93 @@ nav{
 
   flex: 1;
   justify-content: center;
+}
+
+
+.location-holder{
+
+  margin-top: 8%;
+
+}
+
+
+#map{
+
+  height: 40vw;
+  width: 100%;
+
+  border: 1px solid rgb(111,80,70);
+
+  /*
+  margin-top: 8%;
+  margin-left: 10%;
+  */
+}
+
+.location-right-text{
+  height: 40vw;
+
+  display: flex;
+  display: -webkit-flex;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+}
+
+.location-text-box{
+  border: 3px solid rgb(111, 80, 70);
+  color: rgb(122, 94, 84);
+  font-size: 120%;
+}
+
+.location-right-upper-text{
+  padding: 5%;
+}
+
+.location-right-bottom-text{
+  margin-top: 1%;
+  text-align: center;
+}
+
+.location-bold-text{
+  font-weight: bold;
+}
+
+.color-change-brown-yellow{
+  -webkit-animation-name: brown-yellow;
+  -moz-animation-name: brown-yellow;
+  -o-animation-name: brown-yellow;
+  animation-name: brown-yellow;
+
+  -webkit-animation-duration: 1s;
+}
+
+.color-change-brown-yellow-active{
+  -webkit-animation-name: brown-yellow-active;
+  -moz-animation-name: brown-yellow-active;
+  -o-animation-name: brown-yellow-active;
+  animation-name: brown-yellow-active;
+
+  -webkit-animation-duration: 1s;
+}
+
+
+.color-change-yellow-brown{
+  -webkit-animation-name: yellow-brown;
+  -moz-animation-name: yellow-brown;
+  -o-animation-name: yellow-brown;
+  animation-name: yellow-brown;
+
+  -webkit-animation-duration: 1s;
+}
+
+.color-change-yellow-brown-active{
+  -webkit-animation-name: yellow-brown-active;
+  -moz-animation-name: yellow-brown-active;
+  -o-animation-name: yellow-brown-active;
+  animation-name: yellow-brown-active;
+
+  -webkit-animation-duration: 1s;
 }

@@ -59,19 +59,19 @@
         <div class="collapse navbar-collapse navbar-exl-collapse">
             <ul class="nav navbar-nav">
                 <li class="hidden">
-                    <a class="page-scroll" id="page-top"></a>
+                    <a class="page-scroll nav-item" id="page-top"></a>
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="#storitve">Storitve</a>
+                    <a class="page-scroll nav-item" href="#storitve">Storitve</a>
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="#produkti">Produkti</a>
+                    <a class="page-scroll nav-item" href="#produkti">Produkti</a>
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="#lokacija">Lokacija</a>
+                    <a class="page-scroll nav-item" href="#lokacija">Lokacija</a>
                 </li>
             </ul>
         </div>
@@ -80,11 +80,12 @@
     <!-- /.container -->
 </nav>
 
+<!-- Home page -->
 <section id="home-page" class="page">
     <img id="mainLogo" class="img-responsive" src="../images/mainLogo.png">
 </section>
 
-<!-- storitve -->
+<!-- Storitve -->
 <section id="storitve" class="page">
 
     <div class="page-header">
@@ -99,13 +100,13 @@
                 <div class="col-md-6 col-md-offset-3">
 
                     <div class="storitve-menu">
-                        <div class="storitve-nav storitve-nav-activ"
+                        <a href="#" class="storitve-nav storitve-nav-activ"
                              data-pannel="storitveCards/strizenjeCard.html">Strizenje
-                        </div>
-                        <div class="storitve-nav" data-pannel="storitveCards/oblikovanjeCard.html">Oblikovanje
-                        </div>
-                        <div class="storitve-nav" data-pannel="storitveCards/ravnanjeCard.html">Ravnanje</div>
-                        <div class="storitve-nav" data-pannel="storitveCards/obnovaCard.html">Obnavljanje</div>
+                        </a>
+                        <a href="#" class="storitve-nav" data-pannel="storitveCards/oblikovanjeCard.html">Oblikovanje
+                        </a>
+                        <a href="#" class="storitve-nav" data-pannel="storitveCards/ravnanjeCard.html">Ravnanje</a>
+                        <a href="#" class="storitve-nav" data-pannel="storitveCards/obnovaCard.html">Obnavljanje</a>
                     </div>
 
                 </div>
@@ -160,6 +161,12 @@
 
 </section>
 
+<section id="kontakt" class="page">
+
+
+
+</section>
+
 <!-- Produkti -->
 <section id="produkti" class="page">
 
@@ -198,7 +205,7 @@
                         <div class="produkti-insert-content"></div>
                     </div>
                     <div class="arr">
-                        <img src="../images/arrow_right.png" class="arrow" id="arrow-right">
+                        <img width="72" height="72" src="../images/test_arrow.png" class="arrow" id="arrow-right">
                     </div>
                 </div>
 
@@ -230,6 +237,7 @@
 
 </section>
 
+<!-- Lokacija -->
 <section id="lokacija" class="page">
 
     <div class="page-header">
@@ -260,6 +268,7 @@
 
 <script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/produkti.js"></script>
+<script type="text/javascript" src="../js/animationPlayground.js"></script>
 <script>
     function initMap() {
 

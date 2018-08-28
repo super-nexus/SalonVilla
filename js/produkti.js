@@ -260,6 +260,8 @@ function setUpperTabListener() {
 
     upperTab.click(function () {
 
+
+
         var imgUrl = undefined;
 
         activateTab(false, currentActiveUpperTab);

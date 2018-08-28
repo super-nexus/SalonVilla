@@ -36,7 +36,14 @@ $(function() {
   $('.storitve-nav').click(function(event) {
     /* Act on the event */
 
-    storitveCardContent.fadeOut();
+
+    event.preventDefault();
+
+    if($(this).hasClass('storitve-nav-activ')){
+      return;
+    }
+
+    storitveCardContent.fadeOut(10);
 
     if(!($(this).hasClass('storitve-nav-activ'))){
       activeStoritveNav.removeClass('storitve-nav-activ');

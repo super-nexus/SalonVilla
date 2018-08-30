@@ -79,7 +79,9 @@ function activateTab(active, tab) {
 function setSubOptionListener() {
 
 
-    $('.clickable-option').click(function () {
+    $('.clickable-option').click(function (event) {
+
+        event.preventDefault();
 
         console.log('sub-option clicked');
 
@@ -131,7 +133,9 @@ function setSubOptionListener() {
 
 function setBottomTabListener() {
 
-    $('.bottom-tab').click(function () {
+    $('.bottom-tab').click(function (event) {
+
+        event.preventDefault();
 
         activateTab(false, currentActiveBottomTab);
 
@@ -141,7 +145,7 @@ function setBottomTabListener() {
 
         contentContainer.hide();
 
-        produktiInsertContent.fadeOut();
+        produktiInsertContent.fadeOut(10);
 
         var dataRequiredNumber = parseInt($(this).attr('data-pannel'));
 
@@ -258,9 +262,9 @@ function showArrows(bool) {
 
 function setUpperTabListener() {
 
-    upperTab.click(function () {
+    upperTab.click(function (event) {
 
-
+        event.preventDefault();
 
         var imgUrl = undefined;
 
@@ -270,7 +274,7 @@ function setUpperTabListener() {
 
         //$(this).addClass('color-change-brown-yellow');
 
-        produktiInsertContent.fadeOut();
+        produktiInsertContent.fadeOut(10);
 
         currentActiveUpperTab = $(this);
 
@@ -350,6 +354,25 @@ $(function () {
         });
 
     });
+
+    $('.bottom-tab').hover(function(){
+        console.log('hovering over bottom tab');
+        $(this).css({
+            'background-color': 'rgb(95,67,57)',
+            'color' : '#f5871f'
+        })
+
+    },
+    function () {
+       $(this).css({
+           'background-color': 'rgba(113,82,72, 0.8)',
+           'color' : 'white'
+       })
+    });
+
+    $('.arrow-wrapper').click(function (event) {
+        event.preventDefault();
+    })
 
     setArrowListener();
 });

@@ -36,7 +36,6 @@ $(function() {
   $('.storitve-nav').click(function(event) {
     /* Act on the event */
 
-
     event.preventDefault();
 
     if($(this).hasClass('storitve-nav-activ')){
@@ -95,6 +94,23 @@ $(function() {
       }, 'fast');
     }
 
+  });
+
+  $('.arrow').hover(function (){
+
+      if($(this).attr('id') == 'arrow-right'){
+        $(this).attr('src', '../images/test_arrow_glow_right.png');
+      }
+      else{
+        $(this).attr('src', '../images/test_arrow_glow_left.png');
+      }
+  }, function () {
+      if($(this).attr('id') == 'arrow-right'){
+          $(this).attr('src','../images/arrow_right_test.png');
+      }
+      else{
+          $(this).attr('src','../images/left_arrow_test.png');
+      }
   });
 
 

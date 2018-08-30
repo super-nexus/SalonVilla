@@ -1,0 +1,52 @@
+
+@media only screen and (max-width: 1151px){
+    .page-header-text{
+        font-size: 400%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+
+    .page-header-text{
+        font-size: 300%;
+    }
+
+    .storitve-row{
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+    }
+
+    .storitve-items{
+        display: flex;
+        display: -webkit-flex;
+        flex: 1;
+    }
+
+    .produkti-container{
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+    }
+
+    .brand-box-row{
+        display: flex;
+        display: -webkit-flex;
+        flex: 1;
+        justify-content: center;
+    }
+
+
+
+    .location-flex-holder{
+        display: block;
+    }
+    .location-holder{
+        display: block;
+        padding-top: 8vh;
+    }
+    #map{
+        display: block;
+        height: 40vh;
+    }
+}

@@ -34,17 +34,24 @@
 
     <!-- My style -->
     <link rel="stylesheet" href="../css/generalStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/generalStyleMobile.css" type="text/css" >
 
     <!-- Scrolling.js -->
     <script type="text/javascript" src="../js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="../js/scrolling-nav.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
 
 </head>
 
 <body>
 <!-- Navigation -->
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top top-nav-collapse" role="navigation">
     <div class="container">
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-exl-collapse">
@@ -53,7 +60,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Salon Villa</a>
+            <a class="navbar-brand page-scroll nav-title" href="#page-top">Salon Villa</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-exl-collapse">
@@ -73,6 +80,11 @@
                 <li>
                     <a class="page-scroll nav-item" href="#lokacija">Lokacija</a>
                 </li>
+
+                <li>
+                    <a class="page-scroll nav-item" href="#kontakt">Kontakt</a>
+                </li>
+
             </ul>
         </div>
         <!-- /.collapse -->
@@ -101,7 +113,7 @@
 
                     <div class="storitve-menu">
                         <a href="#" class="storitve-nav storitve-nav-activ"
-                             data-pannel="storitveCards/strizenjeCard.html">Strizenje
+                           data-pannel="storitveCards/strizenjeCard.html">Strizenje
                         </a>
                         <a href="#" class="storitve-nav" data-pannel="storitveCards/oblikovanjeCard.html">Oblikovanje
                         </a>
@@ -129,7 +141,7 @@
                             <div class="storitve-header">STRIZENJE</div>
                             <div class="storitve-white-line"></div>
 
-                            <div class="row">
+                            <div class="row storitve-row">
                                 <div class="col-md-4 storitve-items">
 
                                     <div class="storitve-item storitve-text">Zenske</div>
@@ -161,12 +173,6 @@
 
 </section>
 
-<section id="kontakt" class="page">
-
-
-
-</section>
-
 <!-- Produkti -->
 <section id="produkti" class="page">
 
@@ -181,12 +187,12 @@
             <div class="produkti-box">
 
                 <div class="produkti-box-upper-tabs">
-                    <div class="upper-tab color-changable" data-pannel="JohnMastersMain.html" data-number="1">
+                    <a href="#" class="upper-tab color-changable" data-pannel="JohnMastersMain.html" data-number="1">
                         <div class="upper-tab-text">John Masters</div>
-                    </div>
-                    <div class="upper-tab color-changable" data-pannel="RedkenMain.html" data-number="2">
+                    </a>
+                    <a href="#" class="upper-tab color-changable" data-pannel="RedkenMain.html" data-number="2">
                         <div class="upper-tab-text">Redken</div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="produkti-box-bottom-tabs"></div>
@@ -199,14 +205,21 @@
                 <div class="produkt-content-container">
 
                     <div class="arr">
-                        <img src="../images/arrow_left.png" class="arrow" id="arrow-left">
+                        <a href="#" class="arrow-wrapper">
+                            <img width="72" height="72" src="../images/left_arrow_test.png" class="arrow" id="arrow-left">
+                        </a>
                     </div>
+
                     <div class="arrow-holder">
                         <div class="produkti-insert-content"></div>
                     </div>
+
                     <div class="arr">
-                        <img width="72" height="72" src="../images/test_arrow.png" class="arrow" id="arrow-right">
+                        <a href="#" class="arrow-wrapper">
+                            <img width="72" height="72" src="../images/arrow_right_test.png" class="arrow" id="arrow-right">
+                        </a>
                     </div>
+
                 </div>
 
                 <div class="produkti-box-bottom-brown-bar color-changable"></div>
@@ -243,27 +256,46 @@
     <div class="page-header">
         <span class="page-header-text">Lokacija</span>
     </div>
+    <div class="location-flex-holder">
+        <div class="row location-holder">
+            <div class="col-md-6 col-md-offset-1 map-flex-holder">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="location-right-text">
 
-    <div class="row location-holder">
-        <div class="col-md-6 col-md-offset-1">
-            <div id="map"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="location-right-text">
+                    <div class="location-right-upper-text location-text-box">
+                        <span class="location-bold-text">Prostor smo opremili z mislijo o gostoljubnosti, z zeljo po ugodju ter obcutkom za sproscenost</span><br>
+                        Vas obisk pricakujemo v pravi mescanski vili na Emonski cesti 8
+                        <br>
+                        Najblizje parkirisce je na voljo nasproti ljubljanskih Krizank
+                    </div>
+                    <div class="location-right-bottom-text location-text-box">
+                        <span class="location-bold-text"> Emonska Cesta 8, 1000 Ljubjana </span>
+                    </div>
 
-                <div class="location-right-upper-text location-text-box">
-                    <span class="location-bold-text">Prostor smo opremili z mislijo o gostoljubnosti, z zeljo po ugodju ter obcutkom za sproscenost</span><br>
-                    Vas obisk pricakujemo v pravi mescanski vili na Emonski cesti 8
-                    <br>
-                    Najblizje parkirisce je na voljo nasproti ljubljanskih Krizank
                 </div>
-                <div class="location-right-bottom-text location-text-box">
-                    <span class="location-bold-text"> Emonska Cesta 8, 1000 Ljubjana </span>
-                </div>
-
             </div>
         </div>
     </div>
+</section>
+
+<section id="kontakt" class="page">
+    <div class="delovni-cas-holder">
+        <div class="kontakt-space-holder"></div>
+        <div class="delovni-cas-text">
+            <p>Od ponedeljka do petka ustvarjamo </p>
+            <p>med 8.00 in 19.00</p>
+        </div>
+    </div>
+    <div class="delovni-cas-holder">
+        <div class="kontakt-space-holder"></div>
+        <div class="delovni-cas-text">
+            <p>Rezervacije na:</p>
+            <p>041-772-448</p>
+        </div>
+    </div>
+
 </section>
 
 <script type="text/javascript" src="../js/script.js"></script>

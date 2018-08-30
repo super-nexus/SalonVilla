@@ -78,10 +78,25 @@ body{
   height: 100%;
 }
 
-nav{
-  opacity: 0.75;
+.navbar{
+  margin-bottom: 0;
 }
 
+.nav-title{
+  font-weight: bold;
+  color: black;
+  font-size: 150%;
+  font-style: italic;
+}
+
+.nav-item{
+  font-family: 'Courgette', cursive;
+  font-size: 125%;
+}
+
+.nav-item-active{
+  border-bottom: 2px solid #f5871f;
+}
 
 /*.nav-item{*/
   /*border-bottom: 2px solid black;*/
@@ -152,7 +167,8 @@ nav{
   color: rgb(245, 135, 31);
   background-color: white;
 
-  font-size: 400%;
+  font-size: 500%;
+  font-family: 'Alex Brush', cursive;
 }
 
 #storitve{
@@ -168,6 +184,7 @@ nav{
   background-image: url('../images/davidBackground.jpg');
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
 
   flex-grow: 1;
 
@@ -188,6 +205,7 @@ nav{
   display: -webkit-flex;
 
   color: white;
+  font-family: 'Courgette', cursive;
 
   font-size: 1.3em;
 
@@ -240,7 +258,7 @@ nav{
 
 .storitve-text{
   color: white;
-
+  font-family: 'ABeeZee', sans-serif;
   font-size: 1.1em;
 }
 
@@ -263,6 +281,7 @@ nav{
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 .storitve-prices{
@@ -270,6 +289,7 @@ nav{
   display: -webkit-flex;
   flex-direction: column;
   direction: rtl;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 .storitve-item{
@@ -279,6 +299,7 @@ nav{
 .storitve-ddv-text{
   margin-top: 2%;
   font-size: 1.15em;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 #kontakt{
@@ -288,6 +309,34 @@ nav{
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
+}
+
+.delovni-cas-holder{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kontakt-space-holder{
+  display: flex;
+  display: -webkit-flex;
+  flex: 1;
+}
+
+.delovni-cas-text{
+  font-family: 'Alex Brush', cursive;
+  font-size: 500%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  flex: 2;
+  text-align: center;
+  margin-top: 4%;
+  background-color: white;
+  padding: 1% 0.5% 1% 0.5%;
+  border-radius: 10%;
+  border: 2px solid rgb(95,67,57);
 }
 
 
@@ -358,7 +407,7 @@ nav{
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0.6;
-
+  filter: blur(10px);
   z-index: 0;
 }
 
@@ -422,14 +471,29 @@ nav{
 
 .upper-tab:hover{
   background-color: rgb(95, 67,57);
+  text-decoration: none;
+}
+
+.upper-tab:visited{
+  text-decoration: none;
+}
+
+.upper-tab:link{
+  text-decoration: none;
 }
 
 .upper-tab:hover .upper-tab-text{
   color: #f5871f;
+  text-decoration: none;
+  text-underline: none;
 }
 
 .upper-tab-text{
   color: white;
+  text-decoration: none;
+  font-family: 'Courgette', cursive;
+  font-size: 150%;
+
 }
 
 .upper-tab-active{
@@ -451,12 +515,23 @@ nav{
   background-color: rgba(113, 82, 72, 0.8);
   color: white;
 
+  text-decoration: none;
+  font-family: 'ABeeZee', sans-serif;
   margin-left: 0.2%;
 }
 
 .bottom-tab:hover{
   background-color: rgb(95,67,57);
   color: #f5871f;
+  text-decoration: none;
+}
+
+.bottom-tab:visited{
+  text-decoration: none;
+}
+
+.bottom-tab:link{
+  text-decoration: none;
 }
 
 .bottom-tab-active{
@@ -488,13 +563,13 @@ nav{
 .left-text {
   display: flex;
   display: -webkit-flex;
-
+  font-family: 'ABeeZee', sans-serif;
   color: white;
  /* max-width: 45%;
   max-height: 40%;*/
   flex: 1;
 
-  overflow: scroll;
+ /* overflow: scroll; */
   font-size: 110%;
 }
 
@@ -507,12 +582,23 @@ nav{
 
   background-color: black;
 }
+
+#right-image-john{
+  background-image: url("../images/johnMastersMainPicture.jpg");
+  background-size: cover;
+}
+
+#right-image-redken{
+  background-image: url("../images/redkenMAIN.jpg");
+  background-size: cover;
+}
+
 .options {
   display: flex;
   display: -webkit-flex;
 
   flex: 1;
-
+  font-family: 'ABeeZee', sans-serif;
   position: relative;
   margin-top: 1%;
 
@@ -534,6 +620,7 @@ nav{
   position: relative;
   margin-bottom: 2%;
   background-color: rgba(113, 82, 72, 0.75);
+  font-family: 'ABeeZee', sans-serif;
   display: flex;
   display: -webkit-flex;
 
@@ -580,17 +667,36 @@ nav{
   font-size: 100%;
   display: flex;
   display: -webkit-flex;
-
+  text-decoration: none;
   flex: 1;
   justify-content: center;
 }
 .sub-option:hover {
   background-color: #5f4339;
   color: #f5871f;
+  text-decoration: none;
 }
+.sub-option:visited{
+  text-decoration: none;
+}
+
+.sub-option:link{
+  text-decoration: none;
+}
+
 .option-big:hover {
   background-color: #5f4339;
+  text-decoration: none;
 }
+
+.option-big:visited{
+  text-decoration: none;
+}
+
+.option-big:link{
+  text-decoration: none;
+}
+
 .option-big:hover .option-big-text {
   color: #f5871f;
 }
@@ -620,7 +726,7 @@ nav{
 .arr{
   display: flex;
   display: -webkit-flex;
-
+  justify-content: center;
   height: 10%;
   width: 2%;
   flex: 1;
@@ -656,6 +762,11 @@ nav{
 
   display: flex;
   display: -webkit-flex;
+  font-family: 'ABeeZee', sans-serif;
+
+  background-color: rgb(95, 67, 57);
+  padding: 2%;
+  border-radius: 4%;
 
   flex: 1;
   flex-direction: column;
@@ -670,26 +781,37 @@ nav{
   justify-content: center;
 }
 
+#lokacija{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.location-flex-holder{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+}
 
 .location-holder{
-
-  margin-top: 8vh;
+  display: flex;
+  display: -webkit-flex;
 
 }
+
 
 
 #map{
-
-  height: 40vw;
-  width: 100%;
-
   border: 1px solid rgb(111,80,70);
 
-  /*
-  margin-top: 8%;
-  margin-left: 10%;
-  */
+  display: flex;
+  display: -webkit-flex;
+  flex: 1;
 }
+
 
 .location-right-text{
   height: 40vw;
@@ -703,6 +825,14 @@ nav{
 
 }
 
+.map-flex-holder{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
 .location-text-box{
   border: 3px solid rgb(111, 80, 70);
   color: rgb(122, 94, 84);
@@ -711,6 +841,7 @@ nav{
 
 .location-right-upper-text{
   padding: 5%;
+  font-family: 'ABeeZee', cursive;
 }
 
 .location-right-bottom-text{

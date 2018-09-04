@@ -31,6 +31,9 @@ $(function() {
   colorChangables = $('.color-changable');
   storitvePannel = $('#storitve-pannel');
 
+  console.log("viewport width: " + $(window).width());
+  console.log('viewport height: ' + $(window).height());
+
   //Changes content of storitve-card and makes tab activ or in-active
 
   $('.storitve-nav').click(function(event) {

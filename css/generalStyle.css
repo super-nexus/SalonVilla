@@ -361,6 +361,7 @@ body{
 .brand-box-holder{
   width: 35vw;
   height: 35vw;
+  cursor: pointer;
 }
 
 .brand-box{

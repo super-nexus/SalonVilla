@@ -20,7 +20,7 @@ $(function () {
         //
         //     console.log('Text scroll top: ');
         //
-        //     text.css('opacity', (Math.abs(2 - ((Math.abs(win.scrollTop() - text.offset().top)) / (win.height() / 2)))));
+        //    text.css('opacity', (Math.abs(2 - ((Math.abs(win.scrollTop() - text.offset().top)) / (win.height() / 2)))));
         //     //console.log('opacity: ' + ((win.scrollTop()) / (win.height() / 2)));
         //     //console.log('oppacoi: ' + Math.abs(2 -((Math.abs(win.scrollTop() - text.offset().top)) / (win.height() /2 ))));
         //

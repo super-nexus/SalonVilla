@@ -110,7 +110,7 @@ body{
   width: 100%;
   height: 100%;
 
-  border-bottom: 10px solid rgb(95, 67, 57);
+  /*border-bottom: 10px solid rgb(95, 67, 57); */
 }
 
 #home-page{
@@ -676,6 +676,8 @@ body{
   text-decoration: none;
   flex: 1;
   justify-content: center;
+  align-items: center;
+
 }
 .sub-option:hover {
   background-color: #5f4339;
@@ -816,6 +818,24 @@ body{
   display: flex;
   display: -webkit-flex;
   flex: 1;
+}
+
+#test-header{
+  background-image: url("../images/roadImage.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-top: 4%;
+  height: 2%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+
+}
+
+#special-header{
+  flex: 1;
+  background-color: rgba(0,0,0,0.1);
 }
 
 
